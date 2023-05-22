@@ -7,3 +7,6 @@ calc = Calculator()
 
 #print title
 calc.title()
+
+#print message for the user
+calc.message()

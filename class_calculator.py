@@ -4,6 +4,8 @@ class Calculator:
     def title(self):
         print("Calculator")
     #Message function
+    def message(self):
+        print("Please enter two numbers and operation")
 
     #Input two numbers
 
