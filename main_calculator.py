@@ -2,8 +2,7 @@
 from class_calculator import Calculator
 #Call function from Calculator class
 
-#import try again to rerun the program
-from try_again import program_rerun
+
 
 
 calc = Calculator()
@@ -15,7 +14,8 @@ calc.title()
 calc.message()
 
 
-while True:
+moredata = "Yes"
+while moredata == "Yes" or "yes" or "YES" or "y" or "Y":
     #input numbers
     calc.input_numbers()
 
@@ -28,4 +28,6 @@ while True:
     #display result
     calc.result()
 
-    program_rerun()
+    moredata = (input("Do you want to use the program again? \n[Yes] if continue \n[No] if exit \nEnter option: "))
+
+print("Thank you for using our program!")

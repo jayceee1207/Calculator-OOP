@@ -1,4 +1,4 @@
-from try_again import program_rerun
+
 
 
 
@@ -21,7 +21,7 @@ class Calculator:
                 break
             except:
                 print("Invalid input. Try again!")
-                program_rerun()
+                
                 continue
 
     #choose operation
@@ -57,14 +57,17 @@ class Calculator:
 
     #Display Result
     def result(self):
-        if self.option == 1:
-            print(self.add_num)
-        elif self.option == 2:
-            print(self.subtract_num)
-        elif self.option == 3:
-            print(self.multiply_num)
-        elif self.option == 4:
-            print("Result:",self.divide_num)
+        try: 
+            if self.option == 1:
+                print(self.add_num)
+            elif self.option == 2:
+                print(self.subtract_num)
+            elif self.option == 3:
+                print(self.multiply_num)
+            elif self.option == 4:
+                print("Result:",self.divide_num)
+        except ZeroDivisionError:
+            print("You cannot input 0 on the second number. Try again!")
 
 
     #Thank you message
