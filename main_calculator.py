@@ -18,3 +18,9 @@ while True:
 
     #choose operation
     calc.operation()
+
+    #perform calculation
+    calc.calculations()
+
+    #display result
+    calc.result()

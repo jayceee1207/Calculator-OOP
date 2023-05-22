@@ -29,14 +29,19 @@ class Calculator:
                 print("[3] Operation 3:","Multiplication")
                 print("[4] Operation 4:","Division")
                 self.option = int(input("Enter operation: "))
+                break
                 
             except:
                 print("Invalid input. Try again!")
-        
+                continue
     def calculations(self):
-        if self.option == 1: self.num1 + self.nu
+        if self.option == 1:
+            self.add_num = self.num1 + self.num2
+           
 
 
     #Display Result
+    def result(self):
+        print(self.add_num)
 
     #Thank you message
