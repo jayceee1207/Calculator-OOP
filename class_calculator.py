@@ -34,14 +34,32 @@ class Calculator:
             except:
                 print("Invalid input. Try again!")
                 continue
+
     def calculations(self):
-        if self.option == 1:
-            self.add_num = self.num1 + self.num2
-           
+        try:
+            if self.option == 1:
+                self.add_num = self.num1 + self.num2
+            elif self.option == 2:
+                self.subtract_num = self.num1 - self.num2
+            elif self.option == 3:
+                self.multiply_num = self.num1 * self.num2
+            elif self.option == 4:
+                self.divide_num = self.num1 / self.num2
+        except ZeroDivisionError:
+            pass
+
 
 
     #Display Result
     def result(self):
-        print(self.add_num)
+        if self.option == 1:
+            print(self.add_num)
+        elif self.option == 2:
+            print(self.subtract_num)
+        elif self.option == 3:
+            print(self.multiply_num)
+        elif self.option == 4:
+            print("Result:",self.divide_num)
+
 
     #Thank you message
