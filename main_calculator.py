@@ -2,6 +2,9 @@
 from class_calculator import Calculator
 #Call function from Calculator class
 
+#import try again to rerun the program
+from try_again import program_rerun
+
 
 calc = Calculator()
 
@@ -24,3 +27,5 @@ while True:
 
     #display result
     calc.result()
+
+    program_rerun()

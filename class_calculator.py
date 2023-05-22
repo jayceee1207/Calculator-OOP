@@ -1,3 +1,7 @@
+from try_again import program_rerun
+
+
+
 #Make a class calculator with the functions
 class Calculator:
     #Title function
@@ -17,9 +21,10 @@ class Calculator:
                 break
             except:
                 print("Invalid input. Try again!")
+                program_rerun()
                 continue
 
-    #Perform operation
+    #choose operation
     def operation(self):
         while True:
             try: 
@@ -34,7 +39,7 @@ class Calculator:
             except:
                 print("Invalid input. Try again!")
                 continue
-
+    #perform calculations
     def calculations(self):
         try:
             if self.option == 1:
