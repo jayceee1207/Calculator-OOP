@@ -41,6 +41,22 @@ class Calculator:
                 print("The sum of two numbers is: ",sum_numbers, "\n")
             except ValueError:
                 print("Do not put letters. Input numbers. Try again!")
+                
+        #if choice is subtraction
+        elif option == 2:
+            print("Subtraction")
+            try:
+                #Get two numbers from the user
+                sub_num_1 = float(input("Please enter first number: "))
+                sub_num_2 = float(input("Please enter second number: "))
+                #Perform the operation 
+                sub_numbers = sub_num_1 + sub_num_2
+                
+                #Display the result
+                print("The difference of two numbers is: ",sub_numbers, "\n")
+            except ValueError:
+                print("Do not put letters. Input numbers. Try again!")
+
 
     #Display Result
     
