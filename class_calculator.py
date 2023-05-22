@@ -11,63 +11,39 @@ class Calculator:
     def message(self):
         print("Please enter two numbers and operation")
 
-    #Input two numbers
-    def input_numbers(self):
-        #While True. If the user input a string or character. It will give an error message
-        while True:
-            try:
-                self.num1 = float(input("Please enter number 1: "))
-                self.num2 = float(input("Please enter number 2: "))
-                break
-            except:
-                print("Invalid input. Try again!")
-                
-                continue
+    
+    def menu_calculator():
+        print("Please choose an option from the menu.")
+        print("[1] Operation 1:","Addition")
+        print("[2] Operation 2:","Subtraction")
+        print("[3] Operation 3:","Multiplication")
+        print("[4] Operation 4:","Division")
+    
+    option = int(input("\nEnter your option: "))
 
-    #choose operation
-    def operation(self):
-        while True:
-            try: 
-                print("Please choose an option from the menu.")
-                print("[1] Operation 1:","Addition")
-                print("[2] Operation 2:","Subtraction")
-                print("[3] Operation 3:","Multiplication")
-                print("[4] Operation 4:","Division")
-                self.option = int(input("Enter operation: "))
-                break
-                
-            except:
-                print("Invalid input. Try again!")
-                continue
     #perform calculations
-    def calculations(self):
-        try:
-            if self.option == 1:
-                self.add_num = self.num1 + self.num2
-            elif self.option == 2:
-                self.subtract_num = self.num1 - self.num2
-            elif self.option == 3:
-                self.multiply_num = self.num1 * self.num2
-            elif self.option == 4:
-                self.divide_num = self.num1 / self.num2
-        except ZeroDivisionError:
-            pass
 
-
+    #While True to rerun the program if the user wish to
+    while True:
+        while option > 4:
+            print("Invalid option. Please try again!") 
+            option = int(input("\nEnter your option: "))
+        if option == 1:
+            print("Addition")
+            try:
+                #Get two numbers from the user
+                add_num_1 = float(input("Please enter first number: "))
+                add_num_2 = float(input("Please enter second number: "))
+                #Perform the operation 
+                sum_numbers = add_num_1 + add_num_2
+                
+                #Display the result
+                print("The sum of two numbers is: ",sum_numbers, "\n")
+            except ValueError:
+                print("Do not put letters. Input numbers. Try again!")
 
     #Display Result
-    def result(self):
-        try: 
-            if self.option == 1:
-                print(self.add_num)
-            elif self.option == 2:
-                print(self.subtract_num)
-            elif self.option == 3:
-                print(self.multiply_num)
-            elif self.option == 4:
-                print("Result:",self.divide_num)
-        except ZeroDivisionError:
-            print("You cannot input 0 on the second number. Try again!")
+    
 
 
     #Thank you message
