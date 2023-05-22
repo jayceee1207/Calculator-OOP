@@ -10,3 +10,11 @@ calc.title()
 
 #print message for the user
 calc.message()
+
+
+while True:
+    #input numbers
+    calc.input_numbers()
+
+    #choose operation
+    calc.operation()

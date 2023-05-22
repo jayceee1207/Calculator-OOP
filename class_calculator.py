@@ -8,8 +8,34 @@ class Calculator:
         print("Please enter two numbers and operation")
 
     #Input two numbers
+    def input_numbers(self):
+        #While True. If the user input a string or character. It will give an error message
+        while True:
+            try:
+                self.num1 = float(input("Please enter number 1: "))
+                self.num2 = float(input("Please enter number 2: "))
+                break
+            except:
+                print("Invalid input. Try again!")
+                continue
 
     #Perform operation
+    def operation(self):
+        while True:
+            try: 
+                print("Please choose an option from the menu.")
+                print("[1] Operation 1:","Addition")
+                print("[2] Operation 2:","Subtraction")
+                print("[3] Operation 3:","Multiplication")
+                print("[4] Operation 4:","Division")
+                self.option = int(input("Enter operation: "))
+                
+            except:
+                print("Invalid input. Try again!")
+        
+    def calculations(self):
+        if self.option == 1: self.num1 + self.nu
+
 
     #Display Result
 
