@@ -18,7 +18,8 @@ class Calculator:
         print("[2] Operation 2:","Subtraction")
         print("[3] Operation 3:","Multiplication")
         print("[4] Operation 4:","Division")
-    
+    menu_calculator()
+        
     option = int(input("\nEnter your option: "))
 
     #perform calculations
@@ -41,7 +42,7 @@ class Calculator:
                 print("The sum of two numbers is: ",sum_numbers, "\n")
             except ValueError:
                 print("Do not put letters. Input numbers. Try again!")
-                
+
         #if choice is subtraction
         elif option == 2:
             print("Subtraction")
@@ -50,16 +51,57 @@ class Calculator:
                 sub_num_1 = float(input("Please enter first number: "))
                 sub_num_2 = float(input("Please enter second number: "))
                 #Perform the operation 
-                sub_numbers = sub_num_1 + sub_num_2
+                difference_numbers = sub_num_1 - sub_num_2
                 
                 #Display the result
-                print("The difference of two numbers is: ",sub_numbers, "\n")
+                print("The difference of two numbers is: ",difference_numbers, "\n")
             except ValueError:
                 print("Do not put letters. Input numbers. Try again!")
+        
+        #if choice is multiplication
+        elif option == 3:
+            print("Multiplication")
+            try:
+                #Get two numbers from the user
+                mult_num_1 = float(input("Please enter first number: "))
+                mult_num_2 = float(input("Please enter second number: "))
+                #Perform the operation 
+                product_numbers = mult_num_1 * mult_num_2
+                
+                #Display the result
+                print("The product of two numbers is: ",product_numbers, "\n")
+            except ValueError:
+                print("Do not put letters. Input numbers. Try again!")
+        
+        #if choice is multiplication
+        elif option == 4:
+            print("Division")
+            try:
+                #Get two numbers from the user
+                div_num_1 = float(input("Please enter first number: "))
+                div_num_2 = float(input("Please enter second number: "))
+                #Perform the operation 
+                quotient_numbers = div_num_1 / div_num_2
+                
+                #Display the result
+                print("The quotient of two numbers is: ", quotient_numbers, "\n")
+            except ValueError:
+                print("Do not put letters. Input numbers. Try again!")
+            except ZeroDivisionError:
+                print("You cannot put 0 on the second number")
+                
+        moredata = (input("Do you want to use the program again? \n[Yes] if continue \n[No] if exit \nEnter option: "))
+
+        if moredata == "Yes" or "yes" or "Y" or "y" or "YES":
+            menu_calculator()
+            option = int(input("\nEnter your option: "))
+            continue
+
+        else:
+            print("Thank you for using our program!")
+            break
+
+  
 
 
-    #Display Result
-    
-
-
-    #Thank you message
+  
