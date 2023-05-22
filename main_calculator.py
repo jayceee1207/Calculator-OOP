@@ -14,6 +14,6 @@ calc.title()
 calc.message()
 
 #call the menu_calculator
-calc.menu_calculator()
 
+calc.menu_calculator()
     
