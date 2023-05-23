@@ -9,17 +9,21 @@ class Calculator:
     def window(self):
         self.root = tk.Tk()
         self.root.title("Simple App Calculator")
-    #Get two numbers from the user
+        #Get two numbers from the user
 
-    #Choose operation
+        self.number_1_label = tk.Label(self.root, text="Please enter first number: ")
+        self.number_2_label = tk.Label(self.root, text="Please enter second number: ")
+        #Choose operation
 
-    #Button for user input
+        #Button for user input
 
-    #Button for operation
+        #Button for operation
 
-    #Button for calculation
+        #Button for calculation
 
-    #Message box for the result or error message
+        #Message box for the result or error message
+
+        self.root.mainloop()
 
 #Function for calculation
     #Try and except to ask the user again if they enter a string or character
