@@ -70,3 +70,9 @@ class UserInterface(Frame):
             #division
             elif operator == "Divison":
                 result = self.calculator.divide(int(number1)), int(number2)
+
+            self.result_label.config(text=result)
+
+        #Add error handling
+        except ValueError:
+            self.result_label.config(text="Invalid input. Try again!")
