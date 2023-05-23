@@ -76,3 +76,7 @@ class UserInterface(Frame):
         #Add error handling
         except ValueError:
             self.result_label.config(text="Invalid input. Try again!")
+
+        #remove inputs
+        self.input1.delete(0, END)
+        self.input2.delete(0, END)
