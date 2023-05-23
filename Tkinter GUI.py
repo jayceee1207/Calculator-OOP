@@ -38,7 +38,13 @@ class UserInterface(Frame):
         self.operator_var.set("Operator")
 
         #create a menu functions
+        self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", "Multiplication", "Division")
+        self.operator_options.grid(row=2, column=1)
         
         #calculations
-
+        self.button = Button(self, text = "Click for Result!", command=self.press_button)
         #display result
+    
+    #We have to make press button method for buttons
+    def press_button():
+        pass
