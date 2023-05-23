@@ -1,5 +1,6 @@
 #import tkinter for GUI
 import tkinter as tk
+from operations_calculator import operations
 #Make a class calculator with the functions
 class Calculator:
 
@@ -41,11 +42,26 @@ class Calculator:
 
         self.root.mainloop()
 
-#Function for calculation
-
-    #Try and except to ask the user again if they enter a string or character
-
-    
+    #Function for calculation
+    def calculation(self):
+        #Try and except to ask the user again if they enter a string or character
+        try:
+            number1 = float(self.number1_entry.get())
+            number2 = float(self.number2_entry.get())
+            operation = self.operation_menu.get()
+        
+            if operation == "Addition":
+                result = self.calculator.addition(number1, number2)
+            elif operation == "Subtraction":
+                result = self.calculator.subtraction(number1, number2)
+            elif operation == "Multiplcation":
+                result = self.calculator.multiplication(number1, number2)
+            elif operation == "Division":
+                result = self.calculator.division(number1, number2)
+        
+            self.result_button.config(text=result)
+        except ValueError:
+            self.re
 
 
 
