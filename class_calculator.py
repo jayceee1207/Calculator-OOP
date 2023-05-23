@@ -1,12 +1,13 @@
 #import tkinter for GUI
 import tkinter as tk
 from operations_calculator import operations
+from tryagain_calculator import TryAgain
 #Make a class calculator with the functions
 class Calculator:
 #Create window for calculator
     def __init__(self, calculator):
         self.calculator = calculator
-        self.window
+        self.window()
 
     #Window format
     def window(self):
