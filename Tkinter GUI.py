@@ -30,11 +30,15 @@ class UserInterface(Frame):
         self.input2.grid(row=1, column=1)   
 
         #widget for operator
+        self.operator_label = Label(self, text = "Operator")
+        self.operator_label.grid(row=2, column=0)   
 
         #initial value is operator
+        self.operator_var = StringVar(self)
+        self.operator_var.set("Operator")
 
         #create a menu functions
-
+        
         #calculations
 
         #display result
