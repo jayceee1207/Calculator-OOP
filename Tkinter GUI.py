@@ -43,8 +43,21 @@ class UserInterface(Frame):
         
         #calculations
         self.button = Button(self, text = "Click for Result!", command=self.press_button)
+        
         #display result
-    
+        self.result_label = Label(self, text = '')
+        self.result_label.grid(row=4, column=1)
+
     #We have to make press button method for buttons
     def press_button():
-        pass
+        #try and except for values
+            #get the values
+
+
+            #perform calculations
+
+            #addition
+            #subtraction
+            #multiplication
+            #division
+            
