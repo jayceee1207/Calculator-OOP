@@ -18,10 +18,12 @@ class UserInterface(Frame):
 
         #widget for 1 label
         
-        self.title_label = Label(self, text = "SIMPLE CALCULATOR", fg="pink", font=('Comic Sans MS', 20, "bold"))
+        self.title_label = Label(self, text = "SIMPLE CALCULATOR", fg="pink", 
+                                 highlightbackground="blue", highlightcolor="red", highlightthickness=2,
+                                 font=('Comic Sans MS', 20, "bold"))
         self.title_label.grid(row = 0, column = 1, columnspan = 3)
 
-        self.input1_label = Label(self, text = "Input number 1", bg="yellow", font=('Courier New', 10, "bold"))
+        self.input1_label = Label(self, text = "Input number 1",  bg="green", fg="white", font=('Courier New', 13, "bold"))
         self.input1_label.grid(row=1, column=0)
 
         #widget for 1 entry
@@ -32,7 +34,7 @@ class UserInterface(Frame):
         self.input1.grid(row=1, column=1)
         
         #widget for 2 label
-        self.input2_label = Label(self, text = "Input number 2:", bg="yellow", font=('Courier New', 10, "bold"))
+        self.input2_label = Label(self, text = "Input number 2", bg="green", fg="white", font=('Courier New', 13, "bold"))
         self.input2_label.grid(row=2, column=0)
 
         #widget for 2 entry
@@ -43,7 +45,7 @@ class UserInterface(Frame):
         self.input2.grid(row=2, column=1)   
 
         #widget for operator
-        self.operator_label = Label(self, text = "Choose operator:",font=('Courier New', 10, "bold"))
+        self.operator_label = Label(self, text = "Choose operator:", fg = "blue", font=('Courier New', 12, "bold"))
         self.operator_label.grid(row=3, column=1)   
 
         #initial value is operator
@@ -52,7 +54,7 @@ class UserInterface(Frame):
 
         #create a menu functions
         self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", 
-                                           "Multiplication", "Division", highlightbackground="red")
+                                           "Multiplication", "Division")
         self.operator_options.grid(row=4, column=1)
 
     
