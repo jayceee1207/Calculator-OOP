@@ -27,21 +27,22 @@ class Calculator:
         self.number1_entry.grid(row=0, column=1)
         self.number2_entry.grid(row=1, column=1)
         #Choose operation
-
-        self.operation_var = tk.StringVar(value = "Choose operation")
-
+        
+        self.operation = tk.StringVar(value = "Choose operation")
         #make a menu where the user will choose any operation from list
-        #Button for user input
-
-        #Button for operation
+        self.operation_menu = tk.OptionMenu(self.root, self.operation, "Addition","Subtraction","Multiplication","Division")
+        self.operation_menu.grid(row=2, column=0, columnspan=2, pady=5)
 
         #Button for calculation
-
+        self.result_button = tk.Button(self.root, text="Click for result!")
+        self.result_button.grid(row=4, column=0, columnspan=2)
+        
         #Message box for the result or error message
 
         self.root.mainloop()
 
 #Function for calculation
+
     #Try and except to ask the user again if they enter a string or character
 
     
