@@ -35,10 +35,15 @@ class Calculator:
         self.operation_menu.grid(row=2, column=0, columnspan=2, pady=5)
 
         #Button for calculation
-        self.result_button = tk.Button(self.root, text="Click for result!")
-        self.result_button.grid(row=4, column=0, columnspan=2)
+        self.calculate_button = tk.Button(self.root, text="Click",command = self.calculation)
+        self.calculate_button.grid(row=3, column=0, columnspan=2, pady=5)
         
         #Message box for the result or error message
+        self.result_label = tk.Label(self.root, text="RESULT:")
+        self.result_label.grid(row=4, column=0, columnspan=2)
+
+        #ask if they want to try again
+        self.ask_again = TryAgain(self.root, self.result_label, self.number1_entry, self.number2_entry)
 
         self.root.mainloop()
 
@@ -48,23 +53,24 @@ class Calculator:
         try:
             number1 = float(self.number1_entry.get())
             number2 = float(self.number2_entry.get())
-            operation = self.operation_menu.get()
+            operation = self.operation.get()
         
             if operation == "Addition":
-                result = self.calculator.addition(number1, number2)
+                result = self.calculator.add(number1, number2)
             elif operation == "Subtraction":
-                result = self.calculator.subtraction(number1, number2)
-            elif operation == "Multiplcation":
-                result = self.calculator.multiplication(number1, number2)
+                result = self.calculator.subtract(number1, number2)
+            elif operation == "Multiplication":
+                result = self.calculator.multiply(number1, number2)
             elif operation == "Division":
-                result = self.calculator.division(number1, number2)
+                result = self.calculator.divide(number1, number2)
         
-            self.result_button.config(text=result)
+            self.result_label.config(text=result)
         except ValueError:
-            self.result_button.config(text="Invalid input. Try again!")
+            self.result_label.config(text="Invalid input. Try again!")
         except ZeroDivisionError as e:
-            self.result_button.config(text=str(e))
+            self.result_label.config(text=str(e))
 
+        self.ask_again.ask()
         
 
 

@@ -2,21 +2,21 @@
 class operations():
     
     #Addition Function
-    def addition(self, number1, number2):
-        return(self + str(number1 + number2))
+    def add(self, number1, number2):
+        return("Sum: " + (number1 + number2))
     #Subtraction Function
-    def subtraction(self, number1, number2):
-        return(self + str(number1 - number2))
+    def subtract(self, number1, number2):
+        return("Difference: " + str(number1 - number2))
 
     #Multiplication Function
-    def multiplication(self, number1, number2):
-        return(self + str(number1 * number2))
+    def multiply(self, number1, number2):
+        return("Product: " + str(number1 * number2))
     
     #Division Function
-    def division(self, number1, number2):
+    def divide(self, number1, number2):
         #The quotient will be displayed if number 2 is not equal to zero
         if number2 :
-            return(self + str(number1 / number2))
+            return("Quotient: " + str(number1 / number2))
         
         #Else, it will raise an error
         else:
