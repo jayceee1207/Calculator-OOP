@@ -1,11 +1,14 @@
 #import tkinter for GUI
-
+import tkinter as tk
 #Make a class calculator with the functions
 class Calculator:
 
 #Create window for calculator
-    #Window format
 
+    #Window format
+    def window(self):
+        self.root = tk.Tk()
+        self.root.title("Simple App Calculator")
     #Get two numbers from the user
 
     #Choose operation
@@ -29,4 +32,3 @@ class Calculator:
   
 
 
-  
