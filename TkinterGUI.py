@@ -1,6 +1,9 @@
 #import tkinter
+import tkinter as tk
 from tkinter import *
 from operations_calculator import operations
+
+
 #Class for User interface
 class UserInterface(Frame):
     def __init__(self, master):
@@ -13,24 +16,34 @@ class UserInterface(Frame):
     def create_widget(self):
 
         #widget for 1 label
-        self.input1_label = Label(self, text = "Input number 1", bg="yellow")
-        self.input1_label.grid(row=0, column=0)
+        
+        self.title_label = Label(self, text = "SIMPLE CALCULATOR", font=('Garamond', 20, "bold"))
+        self.title_label.grid(row = 0, column = 1, columnspan = 3)
+
+        self.input1_label = Label(self, text = "Input number 1", bg="yellow", font=('Arial', 10))
+        self.input1_label.grid(row=1, column=0)
 
         #widget for 1 entry
-        self.input1 = Entry(self)
-        self.input1.grid(row=0, column=1)
+        self.input1 = Entry(self,width=50, 
+                            highlightbackground="black", 
+                            highlightcolor="red",
+                            highlightthickness=2)
+        self.input1.grid(row=1, column=1)
         
         #widget for 2 label
-        self.input2_label = Label(self, text = "Input number 2:", bg="yellow")
-        self.input2_label.grid(row=1, column=0)
+        self.input2_label = Label(self, text = "Input number 2:", bg="yellow", font=('Arial', 10))
+        self.input2_label.grid(row=2, column=0)
 
         #widget for 2 entry
-        self.input2 = Entry(self)
-        self.input2.grid(row=1, column=1)   
+        self.input2 = Entry(self,width=50, 
+                            highlightbackground="black", 
+                            highlightcolor="red",
+                            highlightthickness=2)
+        self.input2.grid(row=2, column=1)   
 
         #widget for operator
         self.operator_label = Label(self, text = "Choose operator:")
-        self.operator_label.grid(row=2, column=0)   
+        self.operator_label.grid(row=3, column=0)   
 
         #initial value is operator
         self.operator_var = StringVar(self)
@@ -38,11 +51,12 @@ class UserInterface(Frame):
 
         #create a menu functions
         self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", "Multiplication", "Division")
-        self.operator_options.grid(row=2, column=1)
+        self.operator_options.grid(row=3, column=1)
         
         #calculations
-        self.button = Button(self, text = "Click Result!", command=self.press_button)
-        self.button.grid(row=3, column=1)
+        self.button = Button(self, text = "Result!", relief=tk.RAISED, 
+                             bg="blue", fg="white", width=20, command=self.press_button)
+        self.button.grid(row=4, column=1, columnspan = 2)
         
         #display result
         self.result_label = Label(self, text ="")
@@ -71,7 +85,7 @@ class UserInterface(Frame):
             elif operator == "Division":
                 result = self.calculator.divide(int(number1), int(number2))
 
-            self.result_label.config(text=result)
+            self.result_label.config(text= result)
 
         #Add error handling
         except ValueError:

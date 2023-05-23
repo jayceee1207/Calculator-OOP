@@ -8,7 +8,8 @@ from TkinterGUI import UserInterface
 # Create the window
 window = Tk()
 window.title("My Simple Calculator")
-window.geometry("500x400")
+window.geometry("500x200")
+
 
 # Call the User Interface
 app = UserInterface(window)
