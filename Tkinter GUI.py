@@ -49,15 +49,24 @@ class UserInterface(Frame):
         self.result_label.grid(row=4, column=1)
 
     #We have to make press button method for buttons
-    def press_button():
+    def press_button(self):
         #try and except for values
+        try:
             #get the values
-
+            number1 = self.input1.get()
+            number2 = self.input2.get()
+            operator = self.operator_var.get()
 
             #perform calculations
-
             #addition
+            if operator == "Addition":
+                result = self.calculator.add(int(number1)), int(number2)
             #subtraction
+            elif operator == "Subtraction":
+                result = self.calculator.subtract(int(number1)), int(number2)
             #multiplication
+            elif operator == "Multiplication":
+                result = self.calculator.multiply(int(number1)), int(number2)
             #division
-            
+            elif operator == "Divison":
+                result = self.calculator.divide(int(number1)), int(number2)
