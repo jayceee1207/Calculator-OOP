@@ -3,7 +3,6 @@ import tkinter as tk
 from operations_calculator import operations
 #Make a class calculator with the functions
 class Calculator:
-
 #Create window for calculator
     def __init__(self, calculator):
         self.calculator = calculator
@@ -61,7 +60,11 @@ class Calculator:
         
             self.result_button.config(text=result)
         except ValueError:
-            self.re
+            self.result_button.config(text="Invalid input. Try again!")
+        except ZeroDivisionError as e:
+            self.result_button.config(text=str(e))
+
+        
 
 
 
