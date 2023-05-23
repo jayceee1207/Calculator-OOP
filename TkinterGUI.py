@@ -1,5 +1,6 @@
 #import tkinter
 import tkinter as tk
+from tkinter import ttk
 from tkinter import *
 from operations_calculator import operations
 
@@ -17,10 +18,10 @@ class UserInterface(Frame):
 
         #widget for 1 label
         
-        self.title_label = Label(self, text = "SIMPLE CALCULATOR", font=('Garamond', 20, "bold"))
+        self.title_label = Label(self, text = "SIMPLE CALCULATOR", fg="pink", font=('Comic Sans MS', 20, "bold"))
         self.title_label.grid(row = 0, column = 1, columnspan = 3)
 
-        self.input1_label = Label(self, text = "Input number 1", bg="yellow", font=('Arial', 10))
+        self.input1_label = Label(self, text = "Input number 1", bg="yellow", font=('Courier New', 10, "bold"))
         self.input1_label.grid(row=1, column=0)
 
         #widget for 1 entry
@@ -31,7 +32,7 @@ class UserInterface(Frame):
         self.input1.grid(row=1, column=1)
         
         #widget for 2 label
-        self.input2_label = Label(self, text = "Input number 2:", bg="yellow", font=('Arial', 10))
+        self.input2_label = Label(self, text = "Input number 2:", bg="yellow", font=('Courier New', 10, "bold"))
         self.input2_label.grid(row=2, column=0)
 
         #widget for 2 entry
@@ -42,25 +43,27 @@ class UserInterface(Frame):
         self.input2.grid(row=2, column=1)   
 
         #widget for operator
-        self.operator_label = Label(self, text = "Choose operator:")
-        self.operator_label.grid(row=3, column=0)   
+        self.operator_label = Label(self, text = "Choose operator:",font=('Courier New', 10, "bold"))
+        self.operator_label.grid(row=3, column=1)   
 
         #initial value is operator
         self.operator_var = StringVar(self)
         self.operator_var.set("Addition")
 
         #create a menu functions
-        self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", "Multiplication", "Division")
-        self.operator_options.grid(row=3, column=1)
-        
+        self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", 
+                                           "Multiplication", "Division", highlightbackground="red")
+        self.operator_options.grid(row=4, column=1)
+
+    
         #calculations
         self.button = Button(self, text = "Result!", relief=tk.RAISED, 
-                             bg="blue", fg="white", width=20, command=self.press_button)
-        self.button.grid(row=4, column=1, columnspan = 2)
+                             bg="blue", fg="white", width=20, borderwidth= 3, command=self.press_button)
+        self.button.grid(row=5, column=1)
         
         #display result
         self.result_label = Label(self, text ="")
-        self.result_label.grid(row=4, column=1)
+        self.result_label.grid(row=5, column=1)
 
     #We have to make press button method for buttons
     def press_button(self):
