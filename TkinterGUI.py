@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import *
 from operations_calculator import operations
+from new_operations_calculator import RemainderNumbers
 
 
 #Class for User interface
@@ -12,7 +13,7 @@ class UserInterface(Frame):
         Frame.__init__(self,master)
         self.grid()
         self.create_widget()
-        self.calculator = operations()
+        self.new_operations = RemainderNumbers()
         
     def create_widget(self):
 
@@ -79,26 +80,26 @@ class UserInterface(Frame):
             #perform calculations
             #addition
             if operator == "Addition":
-                result = self.calculator.add(int(number1), int(number2))
+                result = self.new_operations.add(int(number1), int(number2))
             #subtraction
             elif operator == "Subtraction":
-                result = self.calculator.subtract(int(number1), int(number2))
+                result = self.new_operations.subtract(int(number1), int(number2))
             #multiplication
             elif operator == "Multiplication":
-                result = self.calculator.multiply(int(number1), int(number2))
+                result = self.new_operations.multiply(int(number1), int(number2))
             #division
             elif operator == "Division":
-                result = self.calculator.divide(int(number1), int(number2))
-
-            #remainder
+                result = self.new_operations.divide(int(number1), int(number2))
+            
             elif operator == "Remainder":
-                result = self.calculator.remainder(int(number1), int(number2))
+                result = self.new_operations.remainder(int(number1), int(number2))
 
             self.result_label.config(text= result)
 
         #Add error handling
         except ValueError:
             self.result_label.config(text="Invalid input. Try again!", bg="red")
+    
 
         #remove inputs
         self.input1.delete(0, END)
