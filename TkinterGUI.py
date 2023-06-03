@@ -54,7 +54,7 @@ class UserInterface(Frame):
 
         #create a menu functions
         self.operator_options = OptionMenu(self, self.operator_var, "Addition", "Subtraction", 
-                                           "Multiplication", "Division")
+                                           "Multiplication", "Division", "Remainder")
         self.operator_options.grid(row=4, column=1)
 
     
@@ -89,6 +89,10 @@ class UserInterface(Frame):
             #division
             elif operator == "Division":
                 result = self.calculator.divide(int(number1), int(number2))
+
+            #remainder
+            elif operator == "Remainder":
+                result = self.calculator.remainder(int(number1), int(number2))
 
             self.result_label.config(text= result)
 
